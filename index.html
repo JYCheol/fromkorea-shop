@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>From Korea - Gift2Home</title>
+  <title>From Korea - Gift Order</title>
   <style>
     body { font-family: sans-serif; margin: 0; padding: 0; }
     header { background: #f44336; color: white; padding: 1em; text-align: center; }
@@ -17,6 +16,7 @@
     .section { padding: 2em 1em; max-width: 600px; margin: auto; }
     .section h2 { margin-bottom: 0.5em; }
     .section input, .section textarea { width: 100%; margin-bottom: 1em; padding: 0.7em; font-size: 1em; }
+    .section button { background: #4CAF50; color: white; padding: 0.8em; font-size: 1em; border: none; border-radius: 5px; cursor: pointer; }
     footer { text-align: center; padding: 1em; font-size: 0.9em; background: #f0f0f0; margin-top: 2em; }
     @media (max-width: 600px) {
       .hero h1 { font-size: 1.4em; }
@@ -46,12 +46,15 @@
 
   <section class="section" id="order">
     <h2>🎁 선물 주문하기</h2>
-    <input type="text" placeholder="상품 링크 또는 상품 번호">
-    <input type="text" placeholder="수취인 이름">
-    <input type="text" placeholder="수취인 전화번호">
-    <input type="text" placeholder="수취인 주소">
-    <textarea placeholder="남기고 싶은 메시지 (선택)"></textarea>
-    <button>결제 및 선물 요청</button>
+    <form action="https://docs.google.com/forms/d/e/1FAIpQLSdEXAMPLEURL/formResponse" method="POST" target="_blank">
+      <input type="text" name="entry.1111111111" placeholder="상품 링크 또는 번호" required>
+      <input type="text" name="entry.2222222222" placeholder="수취인 이름" required>
+      <input type="text" name="entry.3333333333" placeholder="수취인 전화번호" required>
+      <input type="text" name="entry.4444444444" placeholder="수취인 주소" required>
+      <textarea name="entry.5555555555" placeholder="남기고 싶은 메시지 (선택)"></textarea>
+      <button type="submit">결제 및 선물 요청</button>
+    </form>
+    <p style="font-size:0.9em; color: gray; margin-top: 1em;">※ 입력된 정보는 운영자에게 전달됩니다. 결제 안내는 개별 연락을 통해 진행됩니다.</p>
   </section>
 
   <footer>
