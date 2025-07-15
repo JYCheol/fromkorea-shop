@@ -1,11 +1,86 @@
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>From Korea - Gift2Home</title>
+  <style>
+    body { font-family: sans-serif; margin: 0; padding: 0; }
+    header { background: #f44336; color: white; padding: 1em; text-align: center; }
+    nav { text-align: center; margin: 1em 0; }
+    nav select { font-size: 1em; padding: 0.3em; }
+    .hero { text-align: center; padding: 2em 1em; background: #ffe6e6; }
+    .hero h1 { font-size: 1.8em; margin-bottom: 0.5em; }
+    .hero p { font-size: 1em; margin-bottom: 1em; }
+    .hero button { font-size: 1em; padding: 0.7em 1.5em; background: #f44336; color: white; border: none; cursor: pointer; border-radius: 5px; }
+    .section { padding: 2em 1em; max-width: 600px; margin: auto; }
+    .section h2 { margin-bottom: 0.5em; }
+    .section input, .section textarea { width: 100%; margin-bottom: 1em; padding: 0.7em; font-size: 1em; }
+    footer { text-align: center; padding: 1em; font-size: 0.9em; background: #f0f0f0; margin-top: 2em; }
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 1.4em; }
+    }
+  </style>
 </head>
 <body>
-  <h1>멀리 있어도 클릭 한 번으로 선물하세요!</h1>
-  <p>이 페이지는 한국에 있는 당신이 외국에 있는 가족에게 선물할 수 있도록 도와줍니다.</p>
+  <header>
+    <h1>From Korea</h1>
+  </header>
+
+  <nav>
+    <label for="lang">🌐 언어 / Language:</label>
+    <select id="lang" onchange="changeLang(this.value)">
+      <option value="ko">한국어</option>
+      <option value="en">English</option>
+      <option value="vi">Tiếng Việt</option>
+      <option value="zh">中文 (简体)</option>
+    </select>
+  </nav>
+
+  <section class="hero">
+    <h1 id="headline">멀리 있어도 클릭 한 번으로 선물하세요!</h1>
+    <p id="subline">한국에서 외국에 있는 가족에게 현지 선물 배송을 도와드립니다.</p>
+    <button onclick="document.getElementById('order').scrollIntoView({behavior: 'smooth'})">지금 선물하기</button>
+  </section>
+
+  <section class="section" id="order">
+    <h2>🎁 선물 주문하기</h2>
+    <input type="text" placeholder="상품 링크 또는 상품 번호">
+    <input type="text" placeholder="수취인 이름">
+    <input type="text" placeholder="수취인 전화번호">
+    <input type="text" placeholder="수취인 주소">
+    <textarea placeholder="남기고 싶은 메시지 (선택)"></textarea>
+    <button>결제 및 선물 요청</button>
+  </section>
+
+  <footer>
+    &copy; 2025 From Korea. All rights reserved.
+  </footer>
+
+<script>
+function changeLang(lang) {
+  const dict = {
+    en: {
+      headline: "Send a gift with one click, even from far away!",
+      subline: "We help you send local gifts to your family abroad from Korea."
+    },
+    vi: {
+      headline: "Dù xa vẫn có thể gửi quà chỉ với một cú nhấp!",
+      subline: "Chúng tôi giúp bạn gửi quà địa phương cho gia đình ở nước ngoài từ Hàn Quốc."
+    },
+    zh: {
+      headline: "即使相隔遥远，也能一键送礼！",
+      subline: "我们帮助您从韩国为海外的家人送上本地礼物。"
+    },
+    ko: {
+      headline: "멀리 있어도 클릭 한 번으로 선물하세요!",
+      subline: "한국에서 외국에 있는 가족에게 현지 선물 배송을 도와드립니다."
+    }
+  };
+  document.getElementById("headline").innerText = dict[lang].headline;
+  document.getElementById("subline").innerText = dict[lang].subline;
+}
+</script>
 </body>
 </html>
