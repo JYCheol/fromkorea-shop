@@ -1,89 +1,70 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="vi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>From Korea - Gift Order</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FromKorea.shop - Quà tặng cho gia đình tại Việt Nam</title>
   <style>
-    body { font-family: sans-serif; margin: 0; padding: 0; }
-    header { background: #f44336; color: white; padding: 1em; text-align: center; }
-    nav { text-align: center; margin: 1em 0; }
-    nav select { font-size: 1em; padding: 0.3em; }
-    .hero { text-align: center; padding: 2em 1em; background: #ffe6e6; }
-    .hero h1 { font-size: 1.8em; margin-bottom: 0.5em; }
-    .hero p { font-size: 1em; margin-bottom: 1em; }
-    .hero button { font-size: 1em; padding: 0.7em 1.5em; background: #f44336; color: white; border: none; cursor: pointer; border-radius: 5px; }
-    .section { padding: 2em 1em; max-width: 600px; margin: auto; }
-    .section h2 { margin-bottom: 0.5em; }
-    .section input, .section textarea { width: 100%; margin-bottom: 1em; padding: 0.7em; font-size: 1em; }
-    .section button { background: #4CAF50; color: white; padding: 0.8em; font-size: 1em; border: none; border-radius: 5px; cursor: pointer; }
-    footer { text-align: center; padding: 1em; font-size: 0.9em; background: #f0f0f0; margin-top: 2em; }
-    @media (max-width: 600px) {
-      .hero h1 { font-size: 1.4em; }
-    }
+    body { font-family: sans-serif; margin: 0; background: #f9f9f9; }
+    header { background: #ff5722; color: white; padding: 20px; text-align: center; }
+    .intro { padding: 20px; text-align: center; background: #fff; }
+    .intro h2 { margin-top: 0; }
+    .products { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 20px; }
+    .product { background: white; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); padding: 15px; width: 250px; }
+    .product img { width: 100%; border-radius: 10px; }
+    .product h3 { margin: 10px 0 5px; font-size: 18px; }
+    .product p { margin: 5px 0; font-size: 14px; }
+    .price { font-weight: bold; color: #e91e63; }
+    .btn { background: #4caf50; color: white; padding: 10px 15px; border: none; border-radius: 5px; cursor: pointer; text-align: center; margin-top: 10px; display: block; text-decoration: none; }
+    footer { text-align: center; padding: 20px; font-size: 14px; color: #777; background: #fff; margin-top: 40px; }
   </style>
 </head>
 <body>
   <header>
-    <h1>From Korea</h1>
+    <h1>FromKorea.shop</h1>
+    <p>Gửi quà tặng đến người thân yêu tại Việt Nam một cách dễ dàng!</p>
   </header>
 
-  <nav>
-    <label for="lang">🌐 언어 / Language:</label>
-    <select id="lang" onchange="changeLang(this.value)">
-      <option value="ko">한국어</option>
-      <option value="en">English</option>
-      <option value="vi">Tiếng Việt</option>
-      <option value="zh">中文 (简体)</option>
-    </select>
-  </nav>
+  <div class="intro">
+    <h2>🎁 Quà tặng yêu thương, gửi trực tiếp từ Hàn Quốc đến gia đình bạn tại Việt Nam</h2>
+    <p>Bạn chỉ cần chọn món quà, thanh toán bằng thẻ Hàn Quốc - chúng tôi sẽ mua và giao hàng tại Việt Nam thay bạn.</p>
+  </div>
 
-  <section class="hero">
-    <h1 id="headline">멀리 있어도 클릭 한 번으로 선물하세요!</h1>
-    <p id="subline">한국에서 외국에 있는 가족에게 현지 선물 배송을 도와드립니다.</p>
-    <button onclick="document.getElementById('order').scrollIntoView({behavior: 'smooth'})">지금 선물하기</button>
-  </section>
-
-  <section class="section" id="order">
-    <h2>🎁 선물 주문하기</h2>
-    <form action="https://docs.google.com/forms/d/e/1FAIpQLSdEXAMPLEURL/formResponse" method="POST" target="_blank">
-      <input type="text" name="entry.1111111111" placeholder="상품 링크 또는 번호" required>
-      <input type="text" name="entry.2222222222" placeholder="수취인 이름" required>
-      <input type="text" name="entry.3333333333" placeholder="수취인 전화번호" required>
-      <input type="text" name="entry.4444444444" placeholder="수취인 주소" required>
-      <textarea name="entry.5555555555" placeholder="남기고 싶은 메시지 (선택)"></textarea>
-      <button type="submit">결제 및 선물 요청</button>
-    </form>
-    <p style="font-size:0.9em; color: gray; margin-top: 1em;">※ 입력된 정보는 운영자에게 전달됩니다. 결제 안내는 개별 연락을 통해 진행됩니다.</p>
+  <section class="products">
+    <div class="product">
+      <img src="https://example.com/gan.jpg" alt="Bổ gan Tuệ Linh">
+      <h3>Thực phẩm chức năng bổ gan Tuệ Linh</h3>
+      <p class="price">Giá: ₩13,104</p>
+      <a href="#" class="btn">Gửi quà</a>
+    </div>
+    <div class="product">
+      <img src="https://example.com/orion.jpg" alt="Bánh gạo Orion">
+      <h3>Bánh gạo Hàn Quốc Orion</h3>
+      <p class="price">Giá: ₩4,732</p>
+      <a href="#" class="btn">Gửi quà</a>
+    </div>
+    <div class="product">
+      <img src="https://example.com/g7.jpg" alt="Cà phê sữa G7">
+      <h3>Cà phê sữa G7 3in1</h3>
+      <p class="price">Giá: ₩5,969</p>
+      <a href="#" class="btn">Gửi quà</a>
+    </div>
+    <div class="product">
+      <img src="https://example.com/locklock.jpg" alt="Bình giữ nhiệt">
+      <h3>Bình giữ nhiệt Lock&Lock 500ml</h3>
+      <p class="price">Giá: ₩16,380</p>
+      <a href="#" class="btn">Gửi quà</a>
+    </div>
+    <div class="product">
+      <img src="https://example.com/hazeline.jpg" alt="Kem dưỡng da Hazeline">
+      <h3>Kem dưỡng da Hazeline</h3>
+      <p class="price">Giá: ₩3,421</p>
+      <a href="#" class="btn">Gửi quà</a>
+    </div>
   </section>
 
   <footer>
-    &copy; 2025 From Korea. All rights reserved.
+    © 2025 FromKorea.shop - Chúng tôi giúp bạn gửi yêu thương về quê nhà
   </footer>
-
-<script>
-function changeLang(lang) {
-  const dict = {
-    en: {
-      headline: "Send a gift with one click, even from far away!",
-      subline: "We help you send local gifts to your family abroad from Korea."
-    },
-    vi: {
-      headline: "Dù xa vẫn có thể gửi quà chỉ với một cú nhấp!",
-      subline: "Chúng tôi giúp bạn gửi quà địa phương cho gia đình ở nước ngoài từ Hàn Quốc."
-    },
-    zh: {
-      headline: "即使相隔遥远，也能一键送礼！",
-      subline: "我们帮助您从韩国为海外的家人送上本地礼物。"
-    },
-    ko: {
-      headline: "멀리 있어도 클릭 한 번으로 선물하세요!",
-      subline: "한국에서 외국에 있는 가족에게 현지 선물 배송을 도와드립니다."
-    }
-  };
-  document.getElementById("headline").innerText = dict[lang].headline;
-  document.getElementById("subline").innerText = dict[lang].subline;
-}
-</script>
 </body>
 </html>
